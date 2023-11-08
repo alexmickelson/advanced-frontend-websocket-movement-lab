@@ -3,7 +3,6 @@ import { WebsocketChat } from './chat/WebsocketChat'
 import { WebsocketProvider } from './chat/WebsocketChatContext'
 
 function App() {
-
   return (
     <>
       <WebsocketProvider>

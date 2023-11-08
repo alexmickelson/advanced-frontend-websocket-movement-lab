@@ -1,4 +1,4 @@
-import { createContext, FC, ReactNode, useState } from "react";
+import { createContext, FC, ReactNode, useEffect, useState } from "react";
 import { VehicleContextType, VehicleType } from "./contextTypes";
 
 
@@ -12,8 +12,20 @@ export const GameServerVehicleContextProvider: FC<{ children: ReactNode }> = ({
   children,
 }) => {
   const [vehicles, setVehicles] = useState<VehicleType[]>([]);
-  const addVehicle = (_id: number) => {}
-
+  
+  
+  useEffect(() => {
+    const moveVehicles = () => {
+      // move all the vehicles
+    }
+    
+    // run movement logic on a 20 millisecond timer
+    const intervalId = window.setInterval(moveVehicles, 20);
+    
+    return () => window.clearInterval(intervalId);
+  }, [vehicles]);
+  
+  const addVehicle = (_id: number) => { }
   const updateVehicle = (
     _id: number,
     _vehicleAction:

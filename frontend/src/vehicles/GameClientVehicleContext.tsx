@@ -14,7 +14,7 @@ export const GameClientVehicleContext = createContext<VehicleContextType>({
 export const GameClientVehicleProvider: FC<{ children: ReactNode }> = ({
   children,
 }) => {
-  const [vehicles, setVehicles] = useState<VehicleType[]>([]);
+  const [vehicles, _setVehicles] = useState<VehicleType[]>([]);
   const addVehicle = (_id: number) => {};
 
   const updateVehicle = (
@@ -31,7 +31,7 @@ export const GameClientVehicleProvider: FC<{ children: ReactNode }> = ({
   ) => {};
 
   return (
-    <GameServerVehicleContext.Provider
+    <GameClientVehicleContext.Provider
       value={{
         vehicles,
         addVehicle,
@@ -39,7 +39,7 @@ export const GameClientVehicleProvider: FC<{ children: ReactNode }> = ({
       }}
     >
       {children}
-    </GameServerVehicleContext.Provider>
+    </GameClientVehicleContext.Provider>
   );
 };
 

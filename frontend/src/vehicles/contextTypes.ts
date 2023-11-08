@@ -1,10 +1,12 @@
 export interface VehicleType {
   id: number;
 
+  // state of the vehicle
   xPosition: number;
   yPosition: number;
   rotation: number;
 
+  // flags needed to determine next state
   turnLeft: boolean;
   turnRight: boolean;
   goForwards: boolean;
@@ -13,10 +15,10 @@ export interface VehicleType {
 
 export interface VehicleContextType {
   vehicles: VehicleType[];
-  addVehicle: (id: number) => void;
+  addVehicle: (_id: number) => void;
   updateVehicle: (
-    id: number,
-    vehicleAction:
+    _id: number,
+    _vehicleAction:
       | "moveForward"
       | "moveBackward"
       | "turnLeft"

@@ -9,7 +9,6 @@ export const GuestVehicle: FC<{
   const vehicle = vehicleContext.vehicles.find((v) => v.id === id);
 
   if (!vehicle) return <div>creating vehicle</div>;
-
   if (!vehicle) return <div>waiting to be told about vehicle {id}</div>;
 
   const viewBox = 100;
